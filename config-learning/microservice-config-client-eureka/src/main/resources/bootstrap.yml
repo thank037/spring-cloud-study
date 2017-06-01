@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: microservice-config-server-eureka
+#      username: thank
+#      password: 111111
+# 如果config server用了安全验证, 且注册到了Eureka, 则用户名密码就这两个属性.
+# 无法写成curl格式: http://thank:111111@localhost:8040 
+
+  application:
+    name: microservice-config-client-eureka
+          
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

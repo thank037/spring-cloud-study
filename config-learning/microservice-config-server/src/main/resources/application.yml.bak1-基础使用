@@ -1,0 +1,16 @@
+server:
+  port: 8040
+ 
+spring:
+  application:
+      name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/thank037/spring-cloud-study/
+          # search-paths: config-resp 下面的二级目录
+          
+# 可以通过下面两种方式获取到远程配置文件信息
+# http://localhost:8040/microservice-config-client-dev.properties
+# http://localhost:8040/microservice-config-client/dev   

@@ -1,0 +1,10 @@
+spring:
+  application:
+      name: microservice-config-client #对应microserver-config-server获取配置文件中的{application}
+  cloud:
+    config:
+      uri: http://localhost:8040
+#      uri: http://thank:123123@localhost:8040 当config server配置用户认证时
+      profile: dev #对应microserver-config-server获取配置文件中的{profile}
+      label: master #指定git的分支, 默认就是master, 对应microserver-config-server获取配置文件中的{lable}
+          

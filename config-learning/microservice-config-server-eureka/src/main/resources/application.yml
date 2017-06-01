@@ -1,0 +1,25 @@
+server:
+  port: 8040
+ 
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://git.oschina.net/it-much/config-repo-51cto-video
+  application:
+    name: microservice-config-server-eureka
+          
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: thank 
+#    password: 111111
