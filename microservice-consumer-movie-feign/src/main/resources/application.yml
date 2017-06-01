@@ -1,0 +1,14 @@
+server:
+  port: 8901
+  
+spring:
+  application:
+    name: microservice-consumer-movie-feign
+
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true #实例名称显示IP

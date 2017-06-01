@@ -1,0 +1,20 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true 
+    
+zuul:
+  routes: 
+    weiyijiuxing:
+      path: /my-user/**
+      serviceId: microservice-provider-user
+#      url: http://localhost:7901/  that is ok! but url路由是不支持HystrixCommand 和Ribbon负载均衡的
+    

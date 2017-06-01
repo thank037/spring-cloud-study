@@ -1,0 +1,13 @@
+server:
+  port: 8977
+  
+spring:
+  application:
+    name: microservice-consumer-aoptest
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://thank:123123@localhost:8761/eureka
+#  instance:
+#    prefer-ip-address: true #实例名称显示IP

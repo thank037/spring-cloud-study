@@ -1,0 +1,36 @@
+server:
+  port: 7901
+ 
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql # 不加的话默认也是读这个
+    data: classpath:data.sql # 不加的话默认也是读这个
+  application:
+    name: microservice-provider-user
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.thank: DEBUG
+    
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true #实例名称显示IP
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}} #定制实例名
+    metadata-map: # 可以在http://localhost:8761/eureka/apps/microservice-provider-user/ 看到
+      zone: AAAA #eureka可以理解的元数据 
+      thank: xfy #xxx不能理解, 不会影响客户端行为
+      

@@ -1,0 +1,19 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true 
+
+zuul:
+  prefix: /abc
+# http://localhost:8050/abc/microservice-provider-user/simple/3
+logging:
+  level:
+    com.netflix: DEBUG

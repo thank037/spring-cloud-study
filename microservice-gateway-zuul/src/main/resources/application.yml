@@ -1,0 +1,18 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true 
+
+#在文件上传时候如果大小较大, 会报Timeout, 所以加入如下配置
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

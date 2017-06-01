@@ -1,0 +1,16 @@
+server:
+  port: 8761
+ 
+eureka:
+  client: 
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://thank:123123@localhost:8761/eureka
+security:
+  basic:
+    enabled: true
+  user:
+    name: thank
+    password: 123123
+    
